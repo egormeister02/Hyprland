@@ -81,6 +81,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R waybar ~/.config/
     cp -R swaylock ~/.config/
     cp -R wofi ~/.config/
+    cp -R .bashrc ~/
     
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
