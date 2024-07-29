@@ -48,17 +48,18 @@ tooltip {
     border-radius: 10px;
 }
 
+#language,
 #custom-power_profile,
 #custom-weather,
-#window,
 #clock,
+#cpu,
+#memory,
 #battery,
 #pulseaudio,
 #network,
 #bluetooth,
 #temperature,
 #workspaces,
-#tray,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
@@ -112,6 +113,20 @@ tooltip {
     border-right: 0px;
 }
 
+#cpu {
+    color: #fe53ea;
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 0px;
+    border-right: 0px;
+}
+
+#memory {
+    color: #77ff58;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 0px;
+    border-right: 0px;
+}
+
 #network {
     color: #f9e2af;
     border-radius: 10px 0px 0px 10px;
@@ -150,4 +165,10 @@ tooltip {
     border-radius: 0px 10px 10px 0px;
     border-right: 0px;
     margin-left: 0px;
+}
+
+#language {
+    border-radius: 10px 10px 10px 10px;
+    border-right: 0px;
+    margin-left: 10px;
 }

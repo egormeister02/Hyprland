@@ -9,6 +9,7 @@ $git_status\
 [](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
+$python\
 $golang\
 $php\
 [](fg:#212736 bg:#1d2230)\
@@ -63,3 +64,7 @@ time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol $virtualenv ](fg:#BFFF00 bg:#212736)]($style)'
