@@ -29,19 +29,19 @@ for FILE in "${FILES_TO_BACKUP[@]}"; do
         
         if [[ -d "$FILE" ]]; then
             rsync -a "$FILE/" "$DEST/"  # Синхронизируем папку
-            echo "Синхронизирована папка: $FILE -> $NAME"
+            echo "Synced folder: $FILE -> $NAME"
         else
             rsync -a "$FILE" "$DEST"      # Синхронизируем файл
-            echo "Синхронизирован файл: $FILE -> $NAME"
+            echo "Synced file: $FILE -> $NAME"
         fi
     else
-        echo "Предупреждение: $FILE не найден, пропускаем..."
+        echo "Warning: $FILE not found, skipping..."
     fi
 done
 
 # Коммит изменений в репозитории
 cd "$REPO_DIR" || exit
 git add .
-git commit -m "Обновление бэкапов от $(date)"
+git commit -m "Update backups from $(date)"
 git push
 
