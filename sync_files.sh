@@ -24,11 +24,16 @@ fi
 # Синхронизация файлов и папок
 for FILE in "${FILES_TO_BACKUP[@]}"; do
     if [[ -e "$FILE" ]]; then
-        RELATIVE_PATH="${FILE#/home/egor/}"  # Удаляем /home/egor для сохранения структуры
-        DEST="$REPO_DIR/$RELATIVE_PATH"
-        mkdir -p "$(dirname "$DEST")"  # Создаем директорию, если её нет
-        rsync -a "$FILE" "$DEST"      # Синхронизируем содержимое
-        echo "Синхронизирован: $FILE -> $RELATIVE_PATH"
+        NAME="$(basename "$FILE")"  # Получаем только имя файла или папки
+        DEST="$REPO_DIR/$NAME"
+        
+        if [[ -d "$FILE" ]]; then
+            rsync -a "$FILE/" "$DEST/"  # Синхронизируем папку
+            echo "Синхронизирована папка: $FILE -> $NAME"
+        else
+            rsync -a "$FILE" "$DEST"      # Синхронизируем файл
+            echo "Синхронизирован файл: $FILE -> $NAME"
+        fi
     else
         echo "Предупреждение: $FILE не найден, пропускаем..."
     fi
