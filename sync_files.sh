@@ -5,13 +5,14 @@ REPO_DIR="./"
 
 # Список путей к файлам и папкам, которые нужно бэкапить
 FILES_TO_BACKUP=(
-    "~/.config/hypr",
-    "~/.config/waybar",
-    "~/.config/swaylock",
-    "~/.config/kitty",
-    "~/.config/mako",
-    "~/.config/starship.toml",\
-    "~/.bashrc"
+    "/home/egor/.config/hypr",
+    "/home/egor/.config/waybar",
+    "/home/egor/.config/swaylock",
+    "/home/egor/.config/kitty",
+    "/home/egor/.config/mako",
+    "/home/egor/.config/wofi",
+    "/home/egor/.config/starship.toml",
+    "/home/egor/.bashrc"
 )
 
 # Проверка существования папки репозитория
