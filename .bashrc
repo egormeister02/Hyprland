@@ -24,6 +24,18 @@ alias yays='yay -Syu --devel --timeupdate'        # Обновить все па
 alias ysi='yay -S'                                # Установить пакет с помощью yay
 alias ysremove='yay -Rns'                         # Удалить пакет с помощью yay
 
+alias vpn-up='sudo wg-quick up wg'
+alias vpn-down='sudo wg-quick down wg'
+
+
+startvpn() {
+    sudo systemctl start openvpn@"$1"
+}
+
+stopvpn() {
+    sudo systemctl stop openvpn@"$1"
+}
+
 startvenv() {
     source "$1"/bin/activate
 }
@@ -33,3 +45,5 @@ alias d="deactivate"
 #PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
+export DOCKER_HOST=unix:///var/run/docker.sock
+export TZ='Europe/Moscow'
