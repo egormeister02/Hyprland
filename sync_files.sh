@@ -10,7 +10,8 @@ FILES_TO_BACKUP=(
     "~/.config/swaylock",
     "~/.config/kitty",
     "~/.config/mako",
-    "~/.config/starship.toml",
+    "~/.config/starship.toml",\
+    "~/.bashrc"
 )
 
 # Проверка существования папки репозитория
